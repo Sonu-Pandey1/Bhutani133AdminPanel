@@ -7,12 +7,19 @@ function Home() {
     return (
         <div className="home">
             <Sidebar />
-            
-            <div className="homeContainer">
-            <Navbar/>
-            <div className="widgets">
-                <Widget/>
-            </div>
+
+            <div className="homeContainer" type="">
+                <Navbar />
+                <div className="widgets">
+                    <Widget type="user" />
+                    <Widget type="order" />
+                    <Widget type="earning" />
+                    <Widget type="balance" />
+                </div>
+
+                <div className="charts">
+
+                </div>
             </div>
 
         </div>
