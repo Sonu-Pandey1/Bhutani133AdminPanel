@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import "../src/App.scss"
-import Home from "./Components/Home/Home"
-import List from "./Components/List/List"
-import Login from "./Components/Login/Login"
-import New from "./Components/New/New"
-import Single from "./Components/Single/Single"
-
+import Home from "./Pages/Home/Home"
+import List from "./Pages/List/List"
+import Login from "./Pages/Login/Login"
+import New from "./Pages/New/New"
+import Single from "./Pages/Single/Single"
 function App() {
 
   return (
@@ -25,7 +24,7 @@ function App() {
             <Route path="new" element={<New />} />
           </Route>
         </Route>
-      </Routes >
+      </Routes>
     </>
   )
 }
