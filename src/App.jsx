@@ -11,12 +11,21 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/list" element={<List/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/new" element={<New/>}/>
-        <Route path="/single" element={<Single/>}/>
-      </Routes>
+        <Route path="/" >
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="users">
+            <Route index element={<List />} />
+            <Route path=":userId" element={<Single />} />
+            <Route path="new" element={<New />} />
+          </Route>
+          <Route path="products">
+            <Route index element={<List />} />
+            <Route path=":productId" element={<Single />} />
+            <Route path="new" element={<New />} />
+          </Route>
+        </Route>
+      </Routes >
     </>
   )
 }
