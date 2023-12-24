@@ -1,14 +1,17 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns } from "../../datatablesource";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useEffect, useState } from "react";
-import { collection, getDocs, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../FirebaseConfig"
 
 
-const Datatable = () => {
+
+const Datatable = ({title}) => {
   const [data, setData] = useState([]);
+  // console.log(title)
+
 
   useEffect(() => {
     // const fetchData = async () => {
@@ -28,7 +31,7 @@ const Datatable = () => {
 
     // listen (realTime)
 
-    const unsub = onSnapshot(collection(db, "users"), (snapShot) => {
+    const unsub = onSnapshot(collection(db, title), (snapShot) => {
       let list = [];
       snapShot.docs.forEach(doc => {
         list.push({ id: doc.id, ...doc.data() });
@@ -41,12 +44,12 @@ const Datatable = () => {
     return ()=>{
       unsub();
     }
-  }, [])
+  }, [title])
   console.log(data);  
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, "users", id));
+      await deleteDoc(doc(db, title, id));
       setData(data.filter((item) => item.id !== id));
     } catch (error) {
       console.log(error.message)
@@ -79,10 +82,8 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
-          Add New
-        </Link>
+        {`Add New ${title}`}
+        {title === "propertys" ? <Link to="/products/new" className="link">Add New</Link>:<Link to="/users/new" className="link">Add New</Link>}
       </div>
       <DataGrid
         className="datagrid"

@@ -91,7 +91,7 @@ function App() {
               index
               element={
                 <RequireAuth>
-                  <List />
+                  <List titles={"users"} />
                 </RequireAuth>
               }
             />
@@ -107,7 +107,7 @@ function App() {
               path="new"
               element={
                 <RequireAuth>
-                  <New inputs={userInputs} title="Add New User" />
+                  <New inputs={userInputs} title="Add New User" titles="users" />
                 </RequireAuth>
               }
             />
@@ -117,7 +117,7 @@ function App() {
               index
               element={
                 <RequireAuth>
-                  <List />
+                  <List titles={"propertys"} />
                 </RequireAuth>
               }
             />
@@ -133,7 +133,7 @@ function App() {
               path="new"
               element={
                 <RequireAuth>
-                  <New inputs={productInputs} title="Add New Product" />
+                  <New inputs={productInputs} title="Add New Product" titles="propertys" />
                 </RequireAuth>
               }
             />
