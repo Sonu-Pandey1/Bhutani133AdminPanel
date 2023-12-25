@@ -1,19 +1,19 @@
+/* eslint-disable react/prop-types */
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns } from "../../datatablesource";
-import { Link} from "react-router-dom";
+import { userColumns , productColumns} from "../../datatablesource";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../FirebaseConfig"
 
 
-
-const Datatable = ({title}) => {
+const Datatable = ({ title }) => {
   const [data, setData] = useState([]);
-  // console.log(title)
 
-
+      // Get Realtime Data From Firebase.
   useEffect(() => {
+    // get data from firebase
     // const fetchData = async () => {
     //   let list = []
     //   try {
@@ -35,18 +35,19 @@ const Datatable = ({title}) => {
       let list = [];
       snapShot.docs.forEach(doc => {
         list.push({ id: doc.id, ...doc.data() });
-
       });
       setData(list)
     }, (error) => {
       console.log(error)
     });
-    return ()=>{
+    
+    return () => {
       unsub();
     }
   }, [title])
-  console.log(data);  
+  console.log(data);
 
+    // Handle Delete-----
   const handleDelete = async (id) => {
     try {
       await deleteDoc(doc(db, title, id));
@@ -54,7 +55,6 @@ const Datatable = ({title}) => {
     } catch (error) {
       console.log(error.message)
     }
-
   };
 
   const actionColumn = [
@@ -65,34 +65,37 @@ const Datatable = ({title}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <Link to={`/${title}/${params.row.id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
+              onClick={() => handleDelete(params.row.id)}>Delete</div>
           </div>
         );
       },
     },
   ];
+  
+console.log(title)
+
   return (
     <div className="datatable">
+
       <div className="datatableTitle">
         {`Add New ${title}`}
-        {title === "propertys" ? <Link to="/products/new" className="link">Add New</Link>:<Link to="/users/new" className="link">Add New</Link>}
+        <Link to={`/${title}/new`} className="link">Add New</Link>
       </div>
+
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={title === "users" ? userColumns.concat(actionColumn):productColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
       />
+
     </div>
   );
 };

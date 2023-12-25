@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./new.scss";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -127,6 +128,7 @@ const New = ({ inputs, title, titles }) => {
                 />
               </div>
 
+             
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>

@@ -43,10 +43,10 @@ function Sidebar() {
             </li>
           </NavLink>
 
-          <NavLink to={"/products"} style={{ textDecoration: "none" }}>
+          <NavLink to={"/propertys"} style={{ textDecoration: "none" }}>
             <li>
               <ProductionQuantityLimitsOutlinedIcon className="icon" />
-              <span>Products</span>
+              <span>Propertys</span>
             </li>
           </NavLink>
 

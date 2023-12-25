@@ -27,6 +27,7 @@ export const userInputs = [
       id: "password",
       label: "Password",
       type: "password",
+      placeholder: "Password",
     },
     {
       id: "address",
@@ -35,43 +36,68 @@ export const userInputs = [
       placeholder: "Elton St. 216 NewYork",
     },
     {
-      id: "country",
-      label: "Country",
+      id: "status",
+      label: "Status",
       type: "text",
-      placeholder: "USA",
+      placeholder: "Active , Panding",
     },
   ];
   
   export const productInputs = [
+    
     {
-      id: 1,
-      label: "Title",
+      id: "builder",
+      label: "Builder",
       type: "text",
-      placeholder: "Apple Macbook Pro",
+      placeholder: "Bhutani",
     },
     {
-      id: 2,
+      id: "title",
+      label: "Title",
+      type: "text",
+      placeholder: "Avenue 62",
+    },
+    {
+      id: "description",
       label: "Description",
       type: "text",
       placeholder: "Description",
     },
     {
-      id: 3,
+      id: "category",
       label: "Category",
       type: "text",
-      placeholder: "Computers",
+      placeholder: "Residential ,Commericial ,Sco etc",
     },
     {
-      id: 4,
+      id: "price",
       label: "Price",
       type: "text",
-      placeholder: "100",
+      placeholder: "2,50000",
     },
     {
-      id: 5,
+      id: "stock",
       label: "Stock",
       type: "text",
-      placeholder: "in stock",
+      placeholder: "yes , No ",
     },
+    {
+      id: "size",
+      label: "Size",
+      type: "text",
+      placeholder: " 2BHK ,3BHK ,4BHK ,etc",
+    },
+    {
+      id: "condition",
+      label: "Condition ",
+      type: "text",
+      placeholder: "Row ,Furnished ,Semi-f ,etc",
+    },
+    {
+      id: "listingdate",
+      label: "Listing Date ",
+      type: "text",
+      placeholder: " 27/11/2023",
+    }
   ];
   
