@@ -1,0 +1,45 @@
+/* 404 page */
+
+.Page404maindiv{
+    background-image: url("https://hs-marketing.imgix.net/images/pages/404/illustration-dogs.png?ixlib=gatsbyHook-2.1.1&fit=min&auto=format%2Ccompress&placeholder=dominantColor&w=1080&h=908");
+    background-position: 100% 100%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100%;
+    padding-left: 50px;
+    overflow: hidden;
+    
+    /* background-color: red; */
+  }
+  .Page404maindiv h1{
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
+  .divdata{
+    /* background-color: #005ce6; */
+    width: 50vw;
+  }
+  .Page404maindiv .btnn{
+    /* border: none; */
+    font-size: 19px;
+    font-weight: 400;
+    color: #6B21A8;
+  
+  }
+  .Page404maindiv p{
+    /* color: #556575; */
+    line-height: 2.4rem;
+    font-size: 24px;
+    font-weight: 450;
+    margin-bottom: 50px;
+  }
+  .pagr404divpcolor{
+    color: #556575;
+  
+  }
+  .btnn3{
+    color:rgb(192 132 252);
+    font-size: 19px;
+    font-weight: 400;
+  }

@@ -12,6 +12,7 @@ import { productInputs, userInputs } from "./formsource"
 import { useContext } from "react"
 import { DarkModeContext } from "./Context/darkModeContext"
 import { AuthContext } from "./Context/AuthContext"
+import Page404 from "./Pages/404 Page/Page404"
 
 function App() {
 
@@ -43,10 +44,12 @@ function App() {
             </RequireAuth>} />
             <Route path="new" element={<RequireAuth><New inputs={productInputs} title="Add New propertys" titles="propertys" /></RequireAuth>} />
           </Route>
+          <Route path="*" element={<Page404/>}/>
 
         </Route>
       </Routes>
     </div>
+    
   );
 }
 
