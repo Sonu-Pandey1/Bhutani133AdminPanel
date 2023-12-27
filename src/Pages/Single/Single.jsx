@@ -16,6 +16,7 @@ import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import MarkEmailReadOutlinedIcon from '@mui/icons-material/MarkEmailReadOutlined';
 import { useParams } from "react-router-dom";
 import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import { db } from "../../FirebaseConfig";
@@ -71,7 +72,7 @@ const Single = ({ titles }) => {
       <div className="singleContainer">
         <Navbar />
         {/* user form */}
-        {titles ==="users" ? <div className="user">
+        {titles === "users" ? <div className="user">
           <div className="userTitleContainer">
             <h1 className="userTitle"> User Information</h1>
           </div>
@@ -79,7 +80,7 @@ const Single = ({ titles }) => {
             <div className="userShow">
               <div className="userShowTop">
                 <img
-                  src={`${items.img}`}
+                  src={`${items.img ? items.img : "https://assets-v2.lottiefiles.com/a/a4f971f6-1170-11ee-bd46-334fd5c2f53c/JB1z4UykFG.gif"}`}
                   alt="img"
                   className="userShowImg"
                 />
@@ -170,8 +171,8 @@ const Single = ({ titles }) => {
                   <div className="userUpdateUpload">
                     <img
                       className="userUpdateImg"
-                      src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                      alt=""
+                      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/edc3ab78364175.5ca3009cb66a0.gif"
+                      alt="img"
                     />
                     <label htmlFor="file">
                       <PublishIcon className="userUpdateIcon" />
@@ -183,9 +184,7 @@ const Single = ({ titles }) => {
               </form>
             </div>
           </div>
-        </div>
-        :
-        <div className="user">
+        </div> : titles === "propertys" ? <div className="user">
           <div className="userTitleContainer">
             <h1 className="userTitle"> Property Information</h1>
           </div>
@@ -193,7 +192,7 @@ const Single = ({ titles }) => {
             <div className="userShow">
               <div className="userShowTop">
                 <img
-                  src={`${items.img}`}
+                  src={`${items.img ? items.img : "https://assets-v2.lottiefiles.com/a/a4f971f6-1170-11ee-bd46-334fd5c2f53c/JB1z4UykFG.gif"}`}
                   alt="img"
                   className="userShowImg"
                 />
@@ -236,21 +235,13 @@ const Single = ({ titles }) => {
                   <CalendarMonthOutlinedIcon className="userShowIcon " />
                   <span className="userShowInfoTitle">{items.listingdate}</span>
                 </div>
-              
+
               </div>
             </div>
             <div className="userUpdate">
               <span className="userUpdateTitle">Edit info..(Coming Soon..)</span>
               <form className="userUpdateForm">
                 <div className="userUpdateLeft">
-                  {/* <div className="userUpdateItem">
-                <label>Username</label>
-                <input
-                  type="text"
-                  placeholder="annabeck99"
-                  className="userUpdateInput"
-                />
-              </div> */}
                   <div className="userUpdateItem">
                     <label>Builder</label>
                     <input
@@ -320,8 +311,8 @@ const Single = ({ titles }) => {
                   <div className="userUpdateUpload">
                     <img
                       className="userUpdateImg"
-                      src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                      alt=""
+                      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/edc3ab78364175.5ca3009cb66a0.gif"
+                      alt="img"
                     />
                     <label htmlFor="file">
                       <Publish className="userUpdateIcon" />
@@ -333,9 +324,236 @@ const Single = ({ titles }) => {
               </form>
             </div>
           </div>
-        </div>
-        }
-        
+        </div> : titles === "querys" ? <div className="user">
+          <div className="userTitleContainer">
+            <h1 className="userTitle"> Query Information</h1>
+          </div>
+          <div className="userContainer">
+            <div className="userShow">
+              <div className="userShowTop">
+                <img
+                  src={`${items.img ? items.img : "https://assets-v2.lottiefiles.com/a/a4f971f6-1170-11ee-bd46-334fd5c2f53c/JB1z4UykFG.gif"}`}
+                  alt="img"
+                  className="userShowImg"
+                />
+                <div className="userShowTopTitle">
+                  <span className="userShowUsername">{items.name}</span>
+                  <span className="userShowUserTitle">{items.city}</span>
+                </div>
+              </div>
+              <div className="userShowBottom">
+                <span className="userShowTitle">Query Details</span>
+                <div className="userShowInfo">
+                  <MarkEmailReadOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.email}</span>
+                </div>
+                <div className="userShowInfo">
+                  <InventoryOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.phone}</span>
+                </div>
+                <div className="userShowInfo">
+                  <MonetizationOnOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.budget}</span>
+                </div>
+                <div className="userShowInfo">
+                  <HomeOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.for}</span>
+                </div>
+                <div className="userShowInfo">
+                  <BedOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.size}</span>
+                </div>
+                <div className="userShowInfo">
+                  <DescriptionOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.id}</span>
+                </div>
+                <div className="userShowInfo">
+                  <CalendarMonthOutlinedIcon className="userShowIcon " />
+                  <span className="userShowInfoTitle">{items.queryDate}</span>
+                </div>
+
+              </div>
+            </div>
+            <div className="userUpdate">
+              <span className="userUpdateTitle">Edit info..(Coming Soon..)</span>
+              <form className="userUpdateForm">
+                <div className="userUpdateLeft">
+                  <div className="userUpdateItem">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>City</label>
+                    <input
+                      type="text"
+                      placeholder="In which city you are intrested ?"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Phone</label>
+                    <input
+                      type="text"
+                      placeholder="Phone"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Budget</label>
+                    <input
+                      type="text"
+                      placeholder="200000"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>For</label>
+                    <input
+                      type="text"
+                      placeholder="Rent, Buy, Resale"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Size</label>
+                    <input
+                      type="text"
+                      placeholder="2BHK ,3BHK ,4BHK ,etc"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Query Date</label>
+                    <input
+                      type="text"
+                      placeholder=" 27/11/2023"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                </div>
+                <div className="userUpdateRight">
+                  <div className="userUpdateUpload">
+                    <img
+                      className="userUpdateImg"
+                      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/edc3ab78364175.5ca3009cb66a0.gif"
+                      alt="img"
+                    />
+                    <label htmlFor="file">
+                      <Publish className="userUpdateIcon" />
+                    </label>
+                    <input type="file" id="file" style={{ display: "none" }} />
+                  </div>
+                  <button className="userUpdateButton">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div> : <div className="user">
+          <div className="userTitleContainer">
+            <h1 className="userTitle"> Blog Information</h1>
+          </div>
+          <div className="userContainer">
+            <div className="userShow">
+              <div className="userShowTop">
+                <img
+                  src={`${items.img ? items.img : "https://assets-v2.lottiefiles.com/a/a4f971f6-1170-11ee-bd46-334fd5c2f53c/JB1z4UykFG.gif"}`}
+                  alt="img"
+                  className="userShowImg"
+                />
+                <div className="userShowTopTitle">
+                  <span className="userShowUsername">{items.builder}</span>
+                  <span className="userShowUserTitle">{items.id}</span>
+                </div>
+              </div>
+              <div className="userShowBottom">
+                <span className="userShowTitle">Blog Details</span>
+                <div className="userShowInfo">
+                  <CategoryIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.title}</span>
+                </div>
+
+                <div className="userShowInfo">
+                  <InventoryOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.about}</span>
+                </div>
+
+                <div className="userShowInfo">
+                  <DescriptionOutlinedIcon className="userShowIcon" />
+                  <span className="userShowInfoTitle">{items.status}</span>
+                </div>
+
+                <div className="userShowInfo">
+                  <CalendarMonthOutlinedIcon className="userShowIcon " />
+                  <span className="userShowInfoTitle">{items.publishdate}</span>
+                </div>
+
+              </div>
+            </div>
+            <div className="userUpdate">
+              <span className="userUpdateTitle">Edit info..(Coming Soon..)</span>
+              <form className="userUpdateForm">
+                <div className="userUpdateLeft">
+                  <div className="userUpdateItem">
+                    <label>Title</label>
+                    <input
+                      type="text"
+                      placeholder="Title"
+                      className="userUpdateInput"
+                    />
+                  </div>
+
+                  <div className="userUpdateItem">
+                    <label>Description</label>
+                    <input
+                      type="text"
+                      placeholder="Description"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Status</label>
+                    <input
+                      type="text"
+                      placeholder="Active, Panding etc"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>ListingDate</label>
+                    <input
+                      type="text"
+                      placeholder=" 27/11/2023"
+                      className="userUpdateInput"
+                    />
+                  </div>
+                </div>
+                <div className="userUpdateRight">
+                  <div className="userUpdateUpload">
+                    <img
+                      className="userUpdateImg"
+                      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/edc3ab78364175.5ca3009cb66a0.gif"
+                      alt="img"
+                    />
+                    <label htmlFor="file">
+                      <Publish className="userUpdateIcon" />
+                    </label>
+                    <input type="file" id="file" style={{ display: "none" }} />
+                  </div>
+                  <button className="userUpdateButton">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>}
+
+
+
+
+
 
         {/* <div className="top">
           <div className="left">

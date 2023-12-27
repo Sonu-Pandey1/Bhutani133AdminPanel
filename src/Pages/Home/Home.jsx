@@ -30,7 +30,7 @@ function Home() {
                 </div>
 
                 <div className="listContainer">
-                    <div className="listTitle">Latest Transactions</div>
+                    <div className="listTitle mb-3">Latest Properties</div>
                     <Table/>
                 </div>
             </div>

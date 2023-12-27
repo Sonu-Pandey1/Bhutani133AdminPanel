@@ -14,6 +14,8 @@ function Widget({ type }) {
 
     const [amount, setAmount] = useState(null)
     const [diff, setdiff] = useState(null)
+    console.log(amount)
+    console.log(diff)
 
 
     let data;
@@ -64,29 +66,33 @@ function Widget({ type }) {
             const today = new Date();
             const lastMonth = new Date(new Date().setMonth(today.getMonth() - 1))
             const prevMonth = new Date(new Date().setMonth(today.getMonth() - 2))
-
+         
             const lastMonthQuery = query(collection(db, data.query), where("timeStamp", "<=", today), where("timeStamp", ">=", lastMonth));
 
             const prevMonthQuery = query(collection(db, data.query), where("timeStamp", "<=", lastMonth), where("timeStamp", ">=", prevMonth));
 
             const lastMonthData = await getDocs(lastMonthQuery)
             const prevMonthData = await getDocs(prevMonthQuery)
+            
+
 
             setAmount(lastMonthData.docs.length)
             setdiff((lastMonthData.docs.length - prevMonthData.docs.length) / (prevMonthData.docs.length) * 100)
+            console.log(lastMonthData.docs.length)
+            console.log(prevMonthData.docs.length)
 
         };
         fetchData()
-    }, [])
+    })
 
     return (
         <div className="widget">
             <div className="left">
                 <span className="title">{data.title}</span>
                 <span className="counter">{data.isMoney && "$"} {amount}</span>
-                <span className="link">{data.link}</span>
+                <span className="link ">{data.link}</span>
             </div>
-            <div className="right">
+            <div className="right ">
                 <div className={`percantage ${diff <= 0 ? "negative" : "positive"}`}>
                     {diff <= 0 ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpOutlinedIcon />}
                     {diff}%

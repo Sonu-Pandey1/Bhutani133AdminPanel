@@ -50,7 +50,8 @@ function Sidebar() {
     <div className="sidebar">
       <div className="top">
         <NavLink to={"/"} style={{ textDecoration: "none" }}>
-          <span className="logo">Admin Panel</span>
+          <span className="logo">Admin Panel &nbsp;</span>
+          <img style={{height:"1.5rem"}} src="https://cdn-icons-png.flaticon.com/128/9909/9909937.png"></img>
         </NavLink>
       </div>
       <hr />
@@ -76,19 +77,23 @@ function Sidebar() {
           <NavLink to={"/propertys"} style={{ textDecoration: "none" }}>
             <li>
               <ProductionQuantityLimitsOutlinedIcon className="icon" />
-              <span>Propertys</span>
+              <span>Properties</span>
             </li>
           </NavLink>
 
-          <li>
-            <ReceiptLongOutlinedIcon className="icon" />
-            <span>Orders</span>
-          </li>
+          <NavLink to={"/querys"} style={{ textDecoration: "none" }}>
+            <li>
+              <ReceiptLongOutlinedIcon className="icon" />
+              <span>Queries</span>
+            </li>
+          </NavLink>
 
-          <li>
-            <LocalShippingOutlinedIcon className="icon" />
-            <span>Delivary</span>
-          </li>
+          <NavLink to={"/blogs"} style={{ textDecoration: "none" }}>
+            <li>
+              <LocalShippingOutlinedIcon className="icon" />
+              <span>Blogs</span>
+            </li>
+          </NavLink>
 
           <div className="unusefullinks">
             <p className="title">USEFUL</p>
@@ -131,7 +136,7 @@ function Sidebar() {
         <div className="colorOption" onClick={() => dispatch({ type: "LIGHT" })}></div>
         <div className="colorOption" onClick={() => dispatch({ type: "DARK" })}></div>
       </div>
-    </div>
+    </div >
   );
 }
 

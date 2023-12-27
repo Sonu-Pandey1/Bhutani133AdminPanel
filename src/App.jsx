@@ -8,11 +8,12 @@ import List from "./Pages/List/List"
 import Login from "./Pages/Login/Login"
 import New from "./Pages/New/New"
 import Single from "./Pages/Single/Single"
-import { productInputs, userInputs } from "./formsource"
+import { blogsInputs, productInputs, querysInputs, userInputs } from "./formsource"
 import { useContext } from "react"
 import { DarkModeContext } from "./Context/darkModeContext"
 import { AuthContext } from "./Context/AuthContext"
 import Page404 from "./Pages/404 Page/Page404"
+import { blogsColumns, querysColumns } from "./datatablesource"
 
 function App() {
 
@@ -44,6 +45,21 @@ function App() {
             </RequireAuth>} />
             <Route path="new" element={<RequireAuth><New inputs={productInputs} title="Add New propertys" titles="propertys" /></RequireAuth>} />
           </Route>
+
+          <Route path="querys">
+            <Route index element={<RequireAuth><List titles={"querys"} /></RequireAuth>} />
+            <Route path=":userId" element={<RequireAuth><Single inputs={querysInputs} titles="querys" />
+            </RequireAuth>} />
+            <Route path="new" element={<RequireAuth><New inputs={querysInputs} title="Add New querys" titles="querys" /></RequireAuth>} />
+          </Route>
+
+          <Route path="blogs">
+            <Route index element={<RequireAuth><List titles={"blogs"} /></RequireAuth>} />
+            <Route path=":userId" element={<RequireAuth><Single inputs={blogsInputs} titles="blogs" />
+            </RequireAuth>} />
+            <Route path="new" element={<RequireAuth><New inputs={blogsInputs} title="Add New blogs" titles="blogs" /></RequireAuth>} />
+          </Route>
+
           <Route path="*" element={<Page404/>}/>
 
         </Route>

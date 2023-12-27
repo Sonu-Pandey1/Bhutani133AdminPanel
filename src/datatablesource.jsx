@@ -97,8 +97,94 @@ export const productColumns = [
       headerName: "Listing Date",
       width: 100,
     },
+  ];
+
+export const querysColumns = [
+ 
+    {
+      field: "name",
+      headerName: "Name",
+      width: 150,
+    },
+    {
+      field: "phone",
+      headerName: "Phone",
+      width: 200,
+    },
+    {
+      field: "budget",
+      headerName: "Budget",
+      width: 100,
+    },
+    {
+      field: "city",
+      headerName: "City",
+      width: 100,
+    },
+    {
+      field: "for",
+      headerName: "For",
+      width: 70,
+    },
+    {
+      field: "size",
+      headerName: "Size",
+      width: 80,
+    },
+    {
+      field: "queryDate",
+      headerName: "QueryDate",
+      width: 110,
+    },
+  ];
+
+export const blogsColumns = [
    
-  
+    {
+      field: "img",
+      headerName: "Img",
+      width: 90,
+      renderCell: (params) => {
+        return (
+          <div className="cellWithImg">
+            <img className="cellImg" src={params.row.img} alt="avatar" />
+            {params.row.username}
+          </div>
+        );
+      },
+    },
+    {
+      field: "title",
+      headerName: "Title",
+      width: 300,
+    },
+    // {
+    //   field: 'route',
+    //   headerName: 'Route',
+    //   width: 140,
+    // },
+    {
+      field: "description",
+      headerName: "Description",
+      width: 200,
+    },
+    {
+      field: "listingdate",
+      headerName: "Publish Date",
+      width: 150,
+    },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 100,
+      renderCell: (params) => {
+        return (
+          <div className={`cellWithStatus ${params.row.status}`}>
+            {params.row.status}
+          </div>
+        );
+      },
+    },
   ];
   
   

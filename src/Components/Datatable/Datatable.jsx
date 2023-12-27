@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns , productColumns} from "../../datatablesource";
+import { userColumns , productColumns, querysColumns, blogsColumns} from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
@@ -90,12 +90,12 @@ console.log(title)
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={title === "users" ? userColumns.concat(actionColumn):productColumns.concat(actionColumn)}
+        columns={ title === "users" ? userColumns.concat(actionColumn) : title === "propertys" ? productColumns.concat(actionColumn): title === "querys" ? querysColumns.concat(actionColumn):blogsColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
       />
-
+{/* {title === "users" ? userColumns.concat(actionColumn):productColumns.concat(actionColumn)} */}
     </div>
   );
 };

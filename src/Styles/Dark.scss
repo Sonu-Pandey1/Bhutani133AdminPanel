@@ -1,12 +1,63 @@
 .app.dark {
     background-color: #111;
-    color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255);
 
     .chartGrid {
         stroke: rgba(228, 228, 228, 0.219);
+
+    }
+    .title{
+        color: white;
+    }
+    .widgets{
+        .title{
+            color: white;
+        }
+    }
+    .charts{
+        .bottom{
+            .title,.ammount,.desc{
+                color: white;
+            }
+        }
+    }
+    .summary{
+        .itemTitle{
+            color: rgb(236, 229, 229) !important;
+        }
+    }
+
+    .listContainer{
+        .MuiTable-root{
+            .MuiTableCell-root{
+                color: rgb(221, 208, 208);
+            }
+        }
+    }
+
+    .sidebar{
+        .top{
+            .logo{
+                color: rgb(242, 235, 235) !important;
+            }
+        }
+        .center{
+            .title{
+                color: rgb(242, 235, 235) !important;
+            }
+            li{
+                .MuiSvgIcon-root{
+                    color: rgb(255, 255, 255);
+                }
+                span{
+                    color: rgb(255, 255, 255) !important;
+                }
+            }
+        }
     }
 
     .table {
+        background-color: rgb(255, 255, 255);
         // border-bottom: 1px solid rgba(72, 0, 255, 0.1) !important;
         .css-11xur9t-MuiPaper-root-MuiTableContainer-root{
             background-color: none ;
@@ -22,12 +73,23 @@
     }
 
     .navbar {
-        color: #999;
+        color: #ffffff;
         border-color: #333;
 
         .search {
-            border-color: gray;
+            border-color: rgb(164, 160, 160);
         }
+
+        .dropdown-menu{
+            background-color: black;
+            li{
+                .dropdown-item{
+                    color: rgb(255, 255, 255) !important;
+                }
+            }
+            
+        }
+        
     }
 
     .sidebar {
@@ -58,8 +120,11 @@
     }
 
     .datatable {
+        .datatableTitle{
+            color: rgb(255, 255, 255);
+        }
         .datagrid {
-            color: gray;
+            color: rgb(210, 203, 203);
             border: none;
             // background-color: red;
 
@@ -91,5 +156,22 @@
 
     input {
         background-color: transparent;
+    }
+    .userShowTitle{
+        color: rgb(228, 220, 220);
+    }
+    .userTitleContainer{
+        color: white;
+    }
+
+    .userContainer{
+        color: white;
+        .userShow{
+            
+
+            .userShowInfo{
+                color: rgb(230, 224, 224);
+            }
+        }
     }
 }
