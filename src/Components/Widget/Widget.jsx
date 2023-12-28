@@ -69,8 +69,6 @@ function Widget({ type }) {
             const lastMonthData = await getDocs(lastMonthQuery)
             const prevMonthData = await getDocs(prevMonthQuery)
             
-
-
             setAmount(lastMonthData.docs.length)
             setdiff((lastMonthData.docs.length - prevMonthData.docs.length) / (prevMonthData.docs.length) * 100)
             console.log(lastMonthData.docs.length)
@@ -82,11 +80,13 @@ function Widget({ type }) {
 
     return (
         <div className="widget">
+
             <div className="left">
                 <span className="title">{data.title}</span>
                 <span className="counter">{data.isMoney && "$"} {amount}</span>
                 <span className="link ">{data.link}</span>
             </div>
+
             <div className="right ">
                 <div className={`percantage ${diff <= 0 ? "negative" : "positive"}`}>
                     {diff <= 0 ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpOutlinedIcon />}
@@ -94,8 +94,9 @@ function Widget({ type }) {
                 </div>
                 {data.icon}
             </div>
+
         </div>
     )
 }
 
-export default Widget
+export default Widget;
