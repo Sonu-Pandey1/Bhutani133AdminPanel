@@ -17,6 +17,7 @@ import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import MarkEmailReadOutlinedIcon from '@mui/icons-material/MarkEmailReadOutlined';
+import MarkUnreadChatAltOutlinedIcon from '@mui/icons-material/MarkUnreadChatAltOutlined';
 import { useParams } from "react-router-dom";
 import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import { db } from "../../FirebaseConfig";
@@ -369,7 +370,12 @@ const Single = ({ titles }) => {
                 </div>
                 <div className="userShowInfo">
                   <CalendarMonthOutlinedIcon className="userShowIcon " />
-                  <span className="userShowInfoTitle">{items.queryDate}</span>
+                  <span className="userShowInfoTitle">{items.formattedDate}</span>
+                </div>
+
+                <div className="userShowInfo">
+                  <MarkUnreadChatAltOutlinedIcon className="userShowIcon " />
+                  <span className="userShowInfoTitle">{items.message}</span>
                 </div>
 
               </div>

@@ -129,13 +129,19 @@ export const userInputs = [
       placeholder: "Email",
     },
     {
+      id: "budget",
+      label: "Budget",
+      type: "text",
+      placeholder: "Your Estimate Budget (In Cr)",
+    },
+    {
       id: "city",
       label: "City",
       type: "text",
       placeholder: "City (in which intrested)",
     },
     {
-      id: "queryDate",
+      id: "formattedDate",
       label: "Query Date",
       type: "date",
       placeholder: "",
@@ -151,6 +157,12 @@ export const userInputs = [
       label: "For ",
       type: "text",
       placeholder: "Rent, Buy, Resale ,etc",
+    },
+    {
+      id: "message",
+      label: "Message ",
+      type: "text",
+      placeholder: "Message",
     },
   ];
 

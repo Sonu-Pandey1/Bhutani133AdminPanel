@@ -122,7 +122,7 @@ export const querysColumns = [
   {
     field: "phone",
     headerName: "Phone",
-    width: 200,
+    width: 140,
   },
   {
     field: "budget",
@@ -145,7 +145,7 @@ export const querysColumns = [
     width: 80,
   },
   {
-    field: "queryDate",
+    field: "formattedDate",
     headerName: "QueryDate",
     width: 110,
   },

@@ -90,7 +90,7 @@ const New = ({ inputs, title, titles }) => {
   const handleInput = (e) => {
     const id = e.target.id;
     const value = e.target.value;
-
+    // here data write because when we store inputs value in data then he replce again and again so prevent that we spread data so that preveous data is also present there
     setData({ ...data, [id]: value });
 
   };
