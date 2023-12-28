@@ -21,7 +21,7 @@ export const userInputs = [
       id: "phone",
       label: "Phone",
       type: "text",
-      placeholder: "+1 234 567 89",
+      placeholder: "Phone-Number",
     },
     {
       id: "password",
@@ -79,7 +79,7 @@ export const userInputs = [
       id: "stock",
       label: "Stock",
       type: "text",
-      placeholder: "yes , No ",
+      placeholder: "Yes , No ",
     },
     {
       id: "size",
@@ -160,7 +160,7 @@ export const userInputs = [
       id: "title",
       label: "Title",
       type: "text",
-      placeholder: "Find Great Properties In Noida",
+      placeholder: "Title",
     },
     {
       id: "description",
@@ -178,7 +178,7 @@ export const userInputs = [
       id: "status",
       label: "Status",
       type: "text",
-      placeholder: "Active , Panding",
+      placeholder: "Active ,Deactive, Panding",
     },
   ];
   

@@ -11,7 +11,7 @@ import { db } from "../../FirebaseConfig"
 const Datatable = ({ title }) => {
   const [data, setData] = useState([]);
 
-      // Get Realtime Data From Firebase.
+      
   useEffect(() => {
     // get data from firebase
     // const fetchData = async () => {

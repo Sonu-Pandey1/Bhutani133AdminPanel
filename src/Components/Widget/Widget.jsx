@@ -7,24 +7,19 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import { useEffect, useState } from "react";
-import { collection, query, where, getDoc, getDocs } from "firebase/firestore"
+import { collection, query, where, getDocs } from "firebase/firestore"
 import { db } from "../../FirebaseConfig"
 
 function Widget({ type }) {
 
     const [amount, setAmount] = useState(null)
     const [diff, setdiff] = useState(null)
-    console.log(amount)
-    console.log(diff)
-
-
+    
     let data;
-
-
     switch (type) {
         case "user":
             data = {
-                title: "USERS",
+                title: "Employees",
                 query: "users",
                 isMoney: false,
                 link: "see all users",
@@ -33,7 +28,7 @@ function Widget({ type }) {
             break;
         case "propertys":
             data = {
-                title: "PROPERTYS",
+                title: "Properties",
                 query:"propertys",
                 isMoney: false,
                 link: "View all orders",
@@ -42,7 +37,7 @@ function Widget({ type }) {
             break;
         case "blogs":
             data = {
-                title: "BLOGS",
+                title: "Blogs",
                 // isMoney: true,
                 query:"blogs",
                 link: "View net earnings",
@@ -51,8 +46,8 @@ function Widget({ type }) {
             break;
         case "requests":
             data = {
-                title: "REQUESTS",
-                query: "requests",
+                title: "Queries",
+                query: "querys",
                 link: "See details",
                 icon: <AccountBalanceWalletOutlinedIcon className="icon" style={{ color: "purple", backgroundColor: "rgba(128,0,128,0.2)" }} />
             };
