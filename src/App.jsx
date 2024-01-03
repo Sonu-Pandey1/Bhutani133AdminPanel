@@ -13,7 +13,7 @@ import { useContext } from "react"
 import { DarkModeContext } from "./Context/darkModeContext"
 import { AuthContext } from "./Context/AuthContext"
 import Page404 from "./Pages/404 Page/Page404"
-import { blogsColumns, querysColumns } from "./datatablesource"
+// import { blogsColumns, querysColumns } from "./datatablesource"
 
 function App() {
 
