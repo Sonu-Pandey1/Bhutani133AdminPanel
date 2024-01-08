@@ -19,19 +19,16 @@ function Home() {
                     <Widget type="blogs" />
                     {/* <Widget type="product" /> */}
                     <Widget type="requests" />
-                   
-                    
-                    
                 </div>
 
                 <div className="charts">
                     <Featured />
-                    <Chart aspect={2 / 1} title=" Last 6 Months ( Revenue)"/>
+                    <Chart aspect={2 / 1} title=" Last 6 Months ( Revenue)" />
                 </div>
 
                 <div className="listContainer">
                     <div className="listTitle mb-3">Latest Properties</div>
-                    <Table/>
+                    <Table />
                 </div>
             </div>
 
