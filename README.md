@@ -10,4 +10,4 @@ For data storage and user authentication, I have integrated Firebase, a robust a
 Overall, this project has been a valuable learning experience, allowing me to explore and implement advanced technologies and methodologies in web development. By successfully integrating Firebase and creating a sophisticated admin panel, I have demonstrated my proficiency in developing scalable and user-centric solutions. I am excited to apply these skills and experiences to future projects and continue exploring innovative solutions in the ever-evolving field of web development.
 
 Check it out here: https://lnkd.in/dqcaB-Ym ,
-View -live --->> https://lnkd.in/gWghGNPF
+View -live --->> https://adminpanel133.netlify.app/login
